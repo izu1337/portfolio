@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr" class="black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('wz5IzGSmcT038b-vQ');
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message
+            };
+
+            emailjs.send('default_service', 'template_igca5df', templateParams)
+                .then((response) => {
+                    console.log('Message envoyé avec succès!', response.status, response.text);
+                    M.toast({html: 'Message envoyé !', classes: 'green'});
+                }, (error) => {
+                    console.log("Erreur lors de l'envoi du message", error);
+                    M.toast({html: 'Erreur!', classes: 'red'});
+                });
+        }
+    </script>
+
+    <title>My Portfolio</title>
+
+    <style>
+        .background-gif {
+            background-image: url('bg5.gif');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background-gif white-text center-align">
+        <br><br><br><br><br><br>
+        <div class="card" style="border: 3px solid #d32f2f; display:inline-block; background: transparent; font-family: 'Noto Sans', sans-serif;">
+            <div class="card-content red-text darken-2">
+                <h4><b>MAHAU CRIBIER</b></h4>
+            </div>
+        </div>
+        <br><br><br><br><br><h4><b>Epitech Student</b></h4>
+        <p class="grey-text text-darken-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, a. Exercitationem necessitatibus nostrum commodi enim ut ullam, reiciendis dolore quis minus harum?</p><br><br><br>
+    </div>
+
+    <div class="grey darken-4"><br><br><br>
+        <h3 class="white-text center-align" id="competences"><b>COMPÉTENCES</b></h3><br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card-panel grey darken-4 center-align">
+                        <i class="fa fa-laptop fa-3x white-text"></i>
+                        <h5 class="white-text">Développement Web</h5>
+                        <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, inventore eveniet ipsa molestiae non, sequi cum id suscipit cupiditate dolorum eius, sunt exercitationem. </p><br>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card-panel grey darken-4 center-align">
+                        <i class="fa fa-database fa-3x white-text"></i>
+                        <h5 class="white-text">Base de Données</h5>
+                        <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nostrum, magni atque minima quam veniam eveniet unde vel. Distinctio nulla nostrum similique eaque architecto repellat quisquam incidunt aliquam modi magni.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card-panel grey darken-4 center-align">
+                        <i class="fa fa-sitemap fa-3x white-text"></i>
+                        <h5 class="white-text">Réseaux</h5>
+                        <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, officia eum enim commodi illum hic eligendi aliquid, itaque alias expedita tenetur a dolorem blanditiis doloremque! Nihil facilis dolores maiores adipisci?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container section"><br>
+        <div class="row">
+            <div class="col s12 m6"><br>
+                <h4 class="white-text"><b>About Me</b></h4>
+                <h5 class="red-text text-darken-2"><b>EPITECH STUDENT</b></h5>
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat obcaecati voluptatibus nesciunt. Temporibus soluta veniam vitae, molestias expedita, cum deserunt natus necessitatibus unde, debitis facilis iusto commodi laborum neque tempora!</p>
+            </div>
+            <div class="col s12 m6"><br>
+                <p class="white-text"><b>HTML</b></p>
+                <div class="progress white">
+                    <div class="determinate red darken-2" style="width: 90%"></div>
+                </div>
+                <p class="white-text"><b>CSS</b></p>
+                <div class="progress white">
+                    <div class="determinate red darken-2" style="width: 80%"></div>
+                </div>
+                <p class="white-text"><b>Java</b></p>
+                <div class="progress white">
+                    <div class="determinate red darken-2" style="width: 75%"></div>
+                </div>
+                <p class="white-text"><b>C#</b></p>
+                <div class="progress white">
+                    <div class="determinate red darken-2" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="grey darken-4 white-text section">
+        <div class="container">
+            <h3 class="white-text center-align"><b>Contactez-moi</b></h3>
+            <div class="row">
+                <form id="contact-form" class="col s12" onsubmit="sendEmail(event)">
+                    <div class="input-field col s12 m6">
+                        <input id="name" type="text" class="white-text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="email" type="email" class="white-text" placeholder="Votre email" required>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="subject" type="text" class="white-text" placeholder="Sujet" required>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="message" class="materialize-textarea white-text" placeholder="Votre message" required></textarea>
+                    </div>
+                    <div class="col s12 center-align">
+                        <button class="btn red darken-2 waves-effect waves-light" type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer black white-text">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Mahau Cribier</h5>
+                    <p class="grey-text text-lighten-4">Étudiant à Epitech, passionné par le développement et les différentes technologies.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Liens utiles</h5>
+                    <ul>
+                        <li><a class="white-text fa fa-github" href="https://www.github.com/izu1337" target="_blank"></a></li>
+                        <li><a class="white-text fa fa-linkedin" href="https://www.linkedin.com" target="_blank"></a></li>
+                        <li><a class="white-text fa fa-twitter" href="https://www.twitter.com" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <p class="white-text">© 2024 Mahau Cribier</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
