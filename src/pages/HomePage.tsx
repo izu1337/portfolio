@@ -83,7 +83,11 @@ export default function HomePage() {
           <p className="text-[#6b6b69] text-base leading-relaxed mb-3">
             Développeur de 21 ans passionné par le code. Vous retrouverez certains
             de mes projets {' '}
-            <a href="#projects" className="text-white hover:underline transition-colors duration-150">
+            <a
+              href="#projects"
+              onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className="text-white hover:underline transition-colors duration-150"
+            >
               ici
             </a>
             .
@@ -92,7 +96,11 @@ export default function HomePage() {
             Etudiant à Epitech Lille, je suis à la recherche d'un poste en tant que développeur full-stack
             où je pourrais contribuer activement au développement de projets de qualité, tout
             en mettant à profit mes compétences et mon expérience. N'hésitez pas à me{' '}
-            <a href="#contacts" className="text-white hover:underline transition-colors duration-150">
+            <a
+              href="#contacts"
+              onClick={(e) => { e.preventDefault(); document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className="text-white hover:underline transition-colors duration-150"
+            >
               contacter
             </a>
             .
