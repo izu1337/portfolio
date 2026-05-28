@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import cvPdf from '../assets/CV.pdf'
 import codalysIcon from '../assets/codalys.ico'
 import nflIcon from '../assets/nfl-icon.png'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
@@ -111,8 +110,7 @@ export default function HomePage() {
 
         {/* Contact links */}
         <div className="flex items-center gap-5 mb-4">
-          <a href={cvPdf} target="_blank" rel="noopener noreferrer" className="text-white hover:underline">
-            Mon CV
+<a href="/portfolio/CV.pdf" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">            Mon CV
           </a>
           <a href="https://github.com/izu1337" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-white hover:underline">
             <FaGithub /> Github
